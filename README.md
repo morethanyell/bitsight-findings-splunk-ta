@@ -1,4 +1,4 @@
-# BitSight Findings Splunk TA Add-on
+# BitSight Company Findings Splunk TA
 The BitSight Splunk TA Add-on is designed to enhance integration between BitSight security ratings and Splunk, providing comprehensive visibility into company ratings and vulnerability findings directly within your Splunk environment.
 
 ## Features
