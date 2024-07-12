@@ -30,7 +30,8 @@ Dual Sourcetypes: Indexes two main sourcetypes:
 ```
 index=_internal 
     host="<the host where the TA is installed>" 
-    source="/opt/splunk/var/log/splunk/ta_bitsight_findings_bitsight_findings.log" sourcetype="tabitsight:log"
+    source="/opt/splunk/var/log/splunk/ta_bitsight_findings_bitsight_findings.log" 
+    sourcetype="tabitsight:log"
 | transaction pid source startswith="Start of collection" endswith="ends here"
 ```
 
