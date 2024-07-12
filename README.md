@@ -25,5 +25,14 @@ Dual Sourcetypes: Indexes two main sourcetypes:
     - Impacts Risk Vector Grade (Yes/No)
     - Severity (Severe, Material, Moderate, Minor)
 
+#### Troubleshooting
+- Look for internal logs using SPL
+```
+index=_internal 
+    host="<the host where the TA is installed>" 
+    source="/opt/splunk/var/log/splunk/ta_bitsight_findings_bitsight_findings.log" sourcetype="tabitsight:log"
+| transaction pid source startswith="Start of collection" endswith="ends here"
+```
+
 ## Support
 You may reach out or send me a pint of IPA via daniel.l.astillero@gmail.com
