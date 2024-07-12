@@ -11,7 +11,7 @@ Dual Sourcetypes: Indexes two main sourcetypes:
 
 
 ## Installation
-- Clone or download the BitSight Findings Splunk TA repository.
+- Clone or download the [BitSight Findings Splunk TA repository](https://splunkbase.splunk.com/app/7467).
 - Install the add-on in your Splunk environment:
 - For Splunk Enterprise, navigate to Apps > Manage Apps > Install app from file.
 - For Splunk Cloud, upload the add-on via Apps > Browse more apps.
