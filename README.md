@@ -1,6 +1,9 @@
 # BitSight Company Findings Splunk TA
 The BitSight Splunk TA Add-on is designed to enhance integration between BitSight security ratings and Splunk, providing comprehensive visibility into company ratings and vulnerability findings directly within your Splunk environment.
 
+## Releases
+Version 1.0.1 was published on 18 July 2024. It introduces [Findings Sampling](https://help.bitsighttech.com/hc/en-us/articles/6145673764759-Findings-Sampling) as a new parameter in the Inputs configuration. This feature was suggested by [R. Srinivasan](https://www.linkedin.com/in/rajashekar-srinivasan-36809bbb).
+
 ## Features
 Dual Sourcetypes: Indexes two main sourcetypes:
 
