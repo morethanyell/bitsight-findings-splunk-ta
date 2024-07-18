@@ -77,6 +77,13 @@ fields = [
         default='severe~material',
         validator=None
     ), 
+    field.RestField(
+        'findings_sampling',
+        required=False,
+        encrypted=False,
+        default='-1',
+        validator=None
+    ), 
 
     field.RestField(
         'disabled',

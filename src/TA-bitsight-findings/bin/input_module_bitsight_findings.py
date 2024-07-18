@@ -66,11 +66,20 @@ def company_exists(companies, search_val):
             return True
     return False
 
-def get_findings(helper, init_url, company_guid, token, irvd, sevcat):
+def get_findings(helper, init_url, company_guid, token, irvd, sevcat, fsamp):
     init_url = init_url.rstrip('/')
     api_url = f'{init_url}/ratings/v1/companies/{company_guid}/findings'
     api_url = api_url + f'?impacts_risk_vector_details={irvd}'
     api_url = api_url + f'&severity_category={sevcat}'
+    
+    helper.log_info(f'hello world {fsamp}')
+    
+    if fsamp==-1:
+        api_url = api_url
+    elif fsamp==1:
+        api_url = api_url + f'&unsampled=true'
+    else:
+        api_url = api_url + f'&unsampled=false'
     
     helper.log_info(f'Querying BitSight Findings API now. company={company_guid} | irvd={irvd} | sevparam={sevcat}')
     helper.log_info(f'GET {api_url}')
@@ -123,6 +132,7 @@ def collect_events(helper, ew):
     stanzaname = helper.get_input_stanza_names()
     init_company_guid = helper.get_arg('company_guid')
     opt_impacts_risk_vector_grade = helper.get_arg('impacts_risk_vector_grade')
+    opt_findings_sampling = int(helper.get_arg('findings_sampling'))
     opt_api_token = helper.get_arg('api_token')
     opt_api_url = helper.get_arg('api_url')
 
@@ -170,7 +180,7 @@ def collect_events(helper, ew):
         
         company_guid_api = companyDetails['guid']
         
-        findings = get_findings(helper, opt_api_url, company_guid_api, opt_api_token, opt_impacts_risk_vector_grade, sev_param)
+        findings = get_findings(helper, opt_api_url, company_guid_api, opt_api_token, opt_impacts_risk_vector_grade, sev_param, opt_findings_sampling)
         
         if findings is None or len(findings)==0:
             helper.log_info('The BitSight API was successful but did not return any findings for company_guid="{company_guid_api}". Onto the next company...')
