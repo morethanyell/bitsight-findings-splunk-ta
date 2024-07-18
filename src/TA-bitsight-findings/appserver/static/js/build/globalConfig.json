@@ -109,6 +109,10 @@
                     {
                         "field": "finding_severity",
                         "label": "Finding Severity"
+                    },
+                    {
+                        "field": "findings_sampling",
+                        "label": "Findings Sampling"
                     }
                 ],
                 "actions": [
@@ -274,6 +278,31 @@
                                     {
                                         "value": "minor",
                                         "label": "Minor"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "field": "findings_sampling",
+                            "label": "Findings Sampling",
+                            "help": "Sampling is when only a subset of findings are shown in the BitSight platform",
+                            "required": false,
+                            "type": "singleSelect",
+                            "defaultValue": "-1",
+                            "options": {
+                                "disableSearch": true,
+                                "autoCompleteFields": [
+                                    {
+                                        "value": "1",
+                                        "label": "Enable unsampled findings"
+                                    },
+                                    {
+                                        "value": "0",
+                                        "label": "Sampled findings"
+                                    },
+                                    {
+                                        "value": "-1",
+                                        "label": "N/a"
                                     }
                                 ]
                             }
